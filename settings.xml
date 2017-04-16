@@ -6,7 +6,7 @@
         <server>
             <id>io.tchepannou.maven</id>
             <username>${env.AWS_ACCESS_KEY}</username>
-            <password>${env.$AWS_SECRET_KEY}</password>
+            <password>${env.AWS_SECRET_KEY}</password>
         </server>
 
     </servers>
