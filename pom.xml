@@ -9,6 +9,11 @@
     <version>2.7.0</version>
 
     <properties>
+        <java.version>1.8</java.version>
+        <project.jdk.version>${java.version}</project.jdk.version>
+        <project.sourceEncoding>UTF-8</project.sourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <spring-data-jpa.version>1.10.5.RELEASE</spring-data-jpa.version>
         <persistence-api.version>1.0.2</persistence-api.version>
         <commons-codec.version>1.10</commons-codec.version>
@@ -34,4 +39,43 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.kuali.maven.wagons</groupId>
+                <artifactId>maven-s3-wagon</artifactId>
+                <version>1.2.1</version>
+            </extension>
+        </extensions>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${project.jdk.version}</source>
+                    <target>${project.jdk.version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+                <version>3.3</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>io.tchepannou.maven</id>
+            <url>s3://io.tchepannou.maven/snapshot</url>
+        </snapshotRepository>
+        <repository>
+            <id>io.tchepannou.maven</id>
+            <url>s3://io.tchepannou.maven/release</url>
+        </repository>
+    </distributionManagement>
+    <repositories>
+        <repository>
+            <id>io.tchepannou.maven</id>
+            <url>s3://io.tchepannou.maven/release</url>
+        </repository>
+    </repositories>
 </project>

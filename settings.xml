@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings>
+
+    <servers>
+        <server>
+            <id>io.tchepannou.maven</id>
+            <username>${env.AWS_ACCESS_KEY}</username>
+            <password>${end.AWS_SECRET_KEY}</password>
+        </server>
+
+    </servers>
+
+</settings>
