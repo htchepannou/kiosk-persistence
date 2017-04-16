@@ -8,4 +8,4 @@ notifications:
   - herve.tchepannou@gmail.com
 
 script:
-  - mvn clean deploy
+  - mvn clean deploy --settings settings.xml
