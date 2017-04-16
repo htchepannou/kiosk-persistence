@@ -17,4 +17,6 @@ public interface LinkRepository extends CrudRepository<Link, Long> {
     List<Link> findByFeedAndType(Feed feed, LinkTypeEnum type, Pageable pageable);
 
     List<Link> findByStatus(LinkStatusEnum status, Pageable pageable);
+
+    List<Link> findByTypeAndStatus(LinkTypeEnum  type, LinkStatusEnum status, Pageable pagination);
 }

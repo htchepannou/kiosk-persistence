@@ -13,4 +13,6 @@ public interface AssetRepository extends CrudRepository<Asset, Long> {
     Asset findByLinkAndTargetAndType(Link link, Link target, AssetTypeEnum type);
 
     List<Asset> findByTargetAndType(Link target, AssetTypeEnum type);
+
+    List<Asset> findByLinkIn(List<Link> link);
 }
